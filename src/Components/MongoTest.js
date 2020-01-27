@@ -5,20 +5,24 @@ import { Button } from 'react-bootstrap';
 
 import '../App.css';
 
-
-function getMongo(){
-	axios
-	.get('/api/getMongo')
-	.then(res => {
-		console.log(res)
-	})
-	.catch(err => console.log(err))
-}
-
-const App = () => (
-    <div>
+function MongoTest(res) {
+	const [data, setData] = useState('');
+	
+	function getMongo(){
+		axios
+		.get('/api/getMongo')
+		.then(async res => {
+			await setData(res)
+			await console.log(data)
+		})
+		.catch(err => console.log(err))
+	}
+	
+	return (
+		<div className="MongoTest">
 			<Button onClick={() => getMongo()}>Test</Button>
 		</div>
-);
+	);
+}
 
-export default App;
+export default MongoTest;

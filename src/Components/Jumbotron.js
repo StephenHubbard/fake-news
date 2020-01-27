@@ -8,7 +8,7 @@ const ExampleToast = ({ children }) => {
 const [show, toggleShow] = useState(true);
 
 	return (
-    <>
+    <div className="d-flex justify-content-center flex-column">
       {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
       <Toast show={show} onClose={() => toggleShow(false)}>
         <Toast.Header>
@@ -16,11 +16,11 @@ const [show, toggleShow] = useState(true);
         </Toast.Header>
         <Toast.Body>{children}</Toast.Body>
       </Toast>
-    </>
+    </div>
   );
 };
 
-const App = () => (
+const JumbotronComponent = () => (
   <Container className="p-3">
     <Jumbotron>
       <h1 className="header">Welcome To Hooks-News</h1>
@@ -34,4 +34,4 @@ const App = () => (
   </Container>
 );
 
-export default App;
+export default JumbotronComponent;
