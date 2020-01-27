@@ -12,7 +12,7 @@ const [show, toggleShow] = useState(true);
       {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
       <Toast show={show} onClose={() => toggleShow(false)}>
         <Toast.Header>
-          <strong className="mr-auto">Fake News Toast</strong>
+          <strong className="mr-auto">Hooks News Toast</strong>
         </Toast.Header>
         <Toast.Body>{children}</Toast.Body>
       </Toast>
@@ -23,7 +23,7 @@ const [show, toggleShow] = useState(true);
 const App = () => (
   <Container className="p-3">
     <Jumbotron>
-      <h1 className="header">Welcome To Fake-News</h1>
+      <h1 className="header">Welcome To Hooks-News</h1>
       <ExampleToast className="toast">
         We now have Toasts
         <span role="img" aria-label="tada">

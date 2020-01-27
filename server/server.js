@@ -4,6 +4,7 @@ const express = require("express");
 const massive = require("massive");
 const session = require('express-session')
 const authCtrl = require('./authController')
+const mongoCtrl = require('./mongoController')
 const {MongoClient} = require('mongodb');
 
 const app = express();
@@ -24,6 +25,9 @@ app.use(session({
     secret: SESSION_SECRET
 }))
 
+// END POINTS 
+app.get('/api/getMongo', mongoCtrl.listDatabases)
+
 massive(CONNECTION_STRING)
 .then(dbInstance => {
     app.set("db", dbInstance);
@@ -41,7 +45,7 @@ async function connectMongo(){
         // Connect to the MongoDB cluster
 				await client.connect();
         console.log("MongoDB database connected")
-        await  listDatabases(client);
+        // await  mongoCtrl.listDatabases(client);
     } catch (e) {
         console.error(e);
     } finally {
@@ -49,9 +53,9 @@ async function connectMongo(){
     }
 }
 
-async function listDatabases(client){
-	databasesList = await client.db().admin().listDatabases();
+// async function listDatabases(client){
+// 	databasesList = await client.db().admin().listDatabases();
 
-	console.log("Databases:");
-	databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
+// 	console.log("Databases:");
+// 	databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+// };
