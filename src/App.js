@@ -1,14 +1,11 @@
 import React from 'react';
-import './App.css';
+import Jumbotron from './Components/Jumbotron';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Fake News</h1>
-      </header>
-    </div>
-  );
-}
+
+const App = () => (
+  <>
+    <Jumbotron />
+  </>
+);
 
 export default App;
