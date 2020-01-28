@@ -1,14 +1,13 @@
 import React from 'react';
-import Jumbotron from './Components/Jumbotron';
-import MongoTest from './Components/MongoTest';
-import HookTest from './Components/HookTest';
+import Header from './Components/Header';
+import Routes from './Routes';
+
 
 
 const App = () => (
   <div className="App">
-    <Jumbotron />
-    <MongoTest />  
-    <HookTest />
+    <Header />
+    {Routes}
   </div>
 );
 
