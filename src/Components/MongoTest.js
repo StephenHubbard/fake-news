@@ -11,9 +11,8 @@ function MongoTest(res) {
 	function getMongo(){
 		axios
 		.get('/api/getMongo')
-		.then(async res => {
-			await setData(res)
-			await console.log(data)
+		.then(res => {
+			setData(res)
 		})
 		.catch(err => console.log(err))
 	}
