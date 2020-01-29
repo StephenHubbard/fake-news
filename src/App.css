@@ -10,6 +10,7 @@
   margin: 0 auto;
 }
 
-.MongoTest {
-  text-align: center;
+a {
+  color: white !important;
+  text-decoration: none;
 }
