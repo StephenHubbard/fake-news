@@ -13,6 +13,17 @@ module.exports = {
             res.status(200).send(result)
         })
         .catch(err => console.log(err))
+    }, 
+    newPost: async (req, res) => {
+        await client.connect();
+        await console.log(req.body)
+        const { username, category, content } = req.body
 
+        await client.db("posts").collection(req.body.username).insertOne({"username": username, "category": category, "content": content})
+        // await client.db("posts").collection("ph").findOne()
+        .then( result => {
+            res.status(200).send(result)
+        })
+        .catch(err => console.log(err))
     }
 }

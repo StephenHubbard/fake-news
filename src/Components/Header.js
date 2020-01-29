@@ -10,10 +10,10 @@ function Header(res) {
 	return (
 		<div className="Header">
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Hooks-News</Navbar.Brand>
+                <Navbar.Brand href="#">Hooks-News</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#post">Post</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="#form">Post</Nav.Link>
                     <Nav.Link href="#about">About</Nav.Link>
                 </Nav>
                     <Form inline>

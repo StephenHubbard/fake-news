@@ -26,7 +26,8 @@ app.use(session({
 }))
 
 // END POINTS 
-app.get('/api/getMongo', mongoCtrl.listDatabases)
+app.get('/api/getMongo', mongoCtrl.listDatabases);
+app.post('/api/post', mongoCtrl.newPost);
 
 massive(CONNECTION_STRING)
 .then(dbInstance => {
