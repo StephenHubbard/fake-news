@@ -41,6 +41,7 @@ function Form(props) {
 						<option>Humor</option>
 						<option>Gaming</option>
 						<option>Sports</option>
+						<option>Fitness</option>
 					</select>
 				</div>
 				
